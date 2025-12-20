@@ -23,7 +23,7 @@ const Index = () => {
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
         <div className="flex items-center gap-2 text-primary-foreground">
           <Shield className="w-8 h-8 text-accent" />
-          <span className="text-xl font-bold">CampusResolve</span>
+          <span className="text-xl font-bold">G Resolve</span>
         </div>
         <Button variant="secondary" onClick={() => navigate('/auth')}>
           Get Started <ArrowRight className="w-4 h-4 ml-2" />

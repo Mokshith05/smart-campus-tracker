@@ -131,7 +131,7 @@ export default function Auth() {
     } else {
       toast({
         title: 'Account Created!',
-        description: 'Welcome to CampusResolve. You can now start reporting issues.',
+        description: 'Welcome to G Resolve. You can now start reporting issues.',
       });
       navigate('/student');
     }
@@ -145,7 +145,7 @@ export default function Auth() {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-accent/20 backdrop-blur-xl mb-4">
             <Shield className="w-8 h-8 text-accent" />
           </div>
-          <h1 className="text-3xl font-bold text-primary-foreground">CampusResolve</h1>
+          <h1 className="text-3xl font-bold text-primary-foreground">G Resolve</h1>
           <p className="text-primary-foreground/70 mt-2">
             AI-Powered Campus Issue Resolution
           </p>

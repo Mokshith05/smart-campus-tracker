@@ -110,7 +110,7 @@ export default function AdminPortal() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Shield className="w-8 h-8 text-accent" />
-            <div><h1 className="text-xl font-bold">CampusResolve</h1><p className="text-xs opacity-80">Admin Portal</p></div>
+            <div><h1 className="text-xl font-bold">G Resolve</h1><p className="text-xs opacity-80">Admin Portal</p></div>
           </div>
           <Button variant="ghost" size="sm" onClick={signOut} className="text-primary-foreground hover:bg-primary-foreground/10">
             <LogOut className="w-4 h-4 mr-2" />Sign Out
