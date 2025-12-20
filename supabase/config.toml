@@ -1,0 +1,4 @@
+project_id = "fflpntxlqfywoctjbkso"
+
+[functions.classify-issue]
+verify_jwt = false

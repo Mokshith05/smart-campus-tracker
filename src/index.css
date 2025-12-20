@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CampusResolve Design System
+   A professional, trust-building design for campus issue management
+   Primary: Deep navy (authority/trust)
+   Accent: Amber/orange (urgency/action)
+   Status colors for issue tracking
+*/
+
+@layer base {
+  :root {
+    /* Core palette - Deep Navy & Warm Accents */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Deep Navy Blue */
+    --primary: 222 47% 20%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary - Soft slate */
+    --secondary: 215 20% 94%;
+    --secondary-foreground: 222 47% 20%;
+
+    /* Muted - Subtle backgrounds */
+    --muted: 215 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Warm Amber */
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input */
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 222 47% 20%;
+
+    --radius: 0.75rem;
+
+    /* Status colors for issue tracking */
+    --status-reported: 215 16% 47%;
+    --status-viewed: 217 91% 60%;
+    --status-assigned: 262 83% 58%;
+    --status-in-progress: 38 92% 50%;
+    --status-resolved: 142 71% 45%;
+    --status-rejected: 0 84% 60%;
+
+    /* Category colors */
+    --category-electrical: 45 93% 47%;
+    --category-hostel: 262 83% 58%;
+    --category-mess: 25 95% 53%;
+    --category-plumber: 199 89% 48%;
+    --category-security: 0 84% 60%;
+    --category-cleaning: 142 71% 45%;
+    --category-internet: 217 91% 60%;
+    --category-others: 215 16% 47%;
+
+    /* Priority colors */
+    --priority-low: 142 71% 45%;
+    --priority-medium: 38 92% 50%;
+    --priority-high: 25 95% 53%;
+    --priority-urgent: 0 84% 60%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(222 47% 20%), hsl(222 47% 30%));
+    --gradient-accent: linear-gradient(135deg, hsl(38 92% 50%), hsl(25 95% 53%));
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%), hsl(158 64% 52%));
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 15%) 0%, hsl(222 47% 25%) 50%, hsl(262 83% 35%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.1), 0 2px 4px -2px hsl(222 47% 11% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.1), 0 4px 6px -4px hsl(222 47% 11% / 0.1);
+    --shadow-glow: 0 0 20px hsl(38 92% 50% / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 15%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 47% 25%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 25%;
+    --sidebar-ring: 38 92% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 222 47% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 47% 20%;
+    --input: 222 47% 20%;
+    --ring: 210 40% 80%;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 47% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 15%;
+    --sidebar-ring: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Status badge variants */
+  .status-reported {
+    @apply bg-muted text-muted-foreground;
+  }
+  .status-viewed {
+    background-color: hsl(var(--status-viewed) / 0.15);
+    color: hsl(var(--status-viewed));
+  }
+  .status-assigned {
+    background-color: hsl(var(--status-assigned) / 0.15);
+    color: hsl(var(--status-assigned));
+  }
+  .status-in-progress {
+    background-color: hsl(var(--status-in-progress) / 0.15);
+    color: hsl(var(--status-in-progress));
+  }
+  .status-resolved {
+    background-color: hsl(var(--status-resolved) / 0.15);
+    color: hsl(var(--status-resolved));
+  }
+  .status-rejected {
+    background-color: hsl(var(--status-rejected) / 0.15);
+    color: hsl(var(--status-rejected));
+  }
+
+  /* Category badges */
+  .category-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+
+  /* Priority indicators */
+  .priority-low {
+    @apply bg-green-100 text-green-700;
+  }
+  .priority-medium {
+    @apply bg-amber-100 text-amber-700;
+  }
+  .priority-high {
+    @apply bg-orange-100 text-orange-700;
+  }
+  .priority-urgent {
+    @apply bg-red-100 text-red-700;
+  }
+
+  /* Glass effect cards */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 shadow-lg;
+  }
+
+  /* Animated gradient background */
+  .gradient-bg {
+    background: var(--gradient-hero);
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Pulse animation for urgent items */
+  .pulse-urgent {
+    animation: pulse-urgent 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-urgent {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  /* Smooth hover transitions */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+
+  /* SOS button styling */
+  .sos-button {
+    @apply relative overflow-hidden bg-destructive text-destructive-foreground;
+  }
+  .sos-button::before {
+    content: '';
+    @apply absolute inset-0 bg-white/20;
+    animation: sos-pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes sos-pulse {
+    0%, 100% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 0.3; transform: scale(1.2); }
+  }
+}
+
+@layer utilities {
+  /* Text gradient utility */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  /* Scrollbar styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Animation delays for staggered animations */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+}
